@@ -445,7 +445,7 @@ function startAutoAbilityUser() {
 				console.log("No medics to unleash!");
 		}
 	
-		// Metal Detector  & Raining Gold for Boss !
+		// Metal Detector  
 		if(target != undefined && target.m_data.type == 2 && targetPercentHPRemaining <= useMetalDetectorOnBossBelowPercent) {
 			if(hasAbility(8)) {
 				if(debug)
@@ -453,16 +453,16 @@ function startAutoAbilityUser() {
 				
 				castAbility(8);
 			}
-			
+		}
+		// Raining Gold for Boss !
+		if(target != undefined && target.m_data.type == 2){
 			if(hasAbility(17)) {
 				if(debug)
 					console.log('Using Raining Gold.');
 				
 				castAbility(17);
 			}
-			
 		}
-		
 		// Decrease Cooldowns (doesn't stack, so make sure it's not already active)
 		//Temporarily disabled until we find a better trigger condition
 		/*
